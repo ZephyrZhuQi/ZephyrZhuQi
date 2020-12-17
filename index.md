@@ -17,9 +17,10 @@ B.Eng. in Computer Science and Technology
 ## Contact
 
 Github: [ZephyrZhuQi] <br />
-Email: [zephyrzhuqi@gmail.com]
+Email: [zephyrzhuqi@gmail.com], [qi_zhu@berkeley.edu]
 
 [Prof. Peng Wang]: https://scholar.google.com.au/citations?user=aPLp7pAAAAAJ&hl=en
 [Prof. Qi Wu]: https://scholar.google.com.au/citations?user=aKXe1FEAAAAJ&hl=en
 [ZephyrZhuQi]: https://github.com/ZephyrZhuQi
 [zephyrzhuqi@gmail.com]: mailto:zephyrzhuqi@gmail.com
+[qi_zhu@berkeley.edu]: mailto:qi_zhu@berkeley.edu

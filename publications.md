@@ -9,7 +9,7 @@ pubs:
       journal: "Association for the Advancement of Artificial Intelligence"
       note:    "AAAI"
       year:    "2021"
-      # url:     "http://publish-more-stuff.org"
+      url:     "https://arxiv.org/abs/2012.05153"
       # doi:     "http://dx.doi.org"
       image:   "/images/ssbaseline.png"
       # media:
@@ -22,7 +22,7 @@ pubs:
       journal: "arXiv preprint"
       # note:    "(presented at Oz)"
       year:    "2020"
-      # url:     "http://publish-more-stuff.org"
+      url:     "https://arxiv.org/abs/2006.00753"
       # doi:     "http://dx.doi.org"
       image:   "/images/sma.png"
       # media:

@@ -11,9 +11,11 @@ permalink: /_blog/
 
 <ul>
   {% for post in site.posts %}
-    <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
-    </li>
+    {% if post.status == "visible" %}
+      <li>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        {{ post.excerpt }}
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 大学教的线性代数与MIT18.06视频课的区别：
+status: invisible
 ---
 
 大学教的线性代数与MIT18.06视频课的区别：

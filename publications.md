@@ -16,6 +16,18 @@ pubs:
         # - name: "IMDB"
           # url:  "http://www.imdb.com/title/tt0133093/"
 
+    - title:   "Chop Chop BERT: Visual Question Answering by Chopping VisualBERT’s Heads"
+      author:  "Chenyu Gao, **Qi Zhu**, Peng Wang, Qi Wu"
+      journal: "International Joint Conferences on Artificial Intelligence"
+      note:    "IJCAI"
+      year:    "2021"
+      url:     "https://arxiv.org/abs/2104.14741"
+      # doi:     "http://dx.doi.org"
+      image:   "/images/chop.png"
+      # media:
+        # - name: "IMDB"
+          # url:  "http://www.imdb.com/title/tt0133093/"
+
     - title:   "Structured Multimodal Attentions for TextVQA"
       author:  "Chenyu Gao, **Qi Zhu**, Peng Wang
 , Hui Li, Yuliang Liu, Anton van den Hengel, Qi Wu"

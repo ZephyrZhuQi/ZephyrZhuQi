@@ -10,10 +10,10 @@ status: visible
 ## Success factors of Transformers
 1. self-attention: expressivity
 
-    对于长距离依赖的编码，增加了模型的表达能力。对于问题结构最小化先验知识。
+    对于长距离依赖的编码，增加了模型的表达能力。假定最少的归纳偏置。
 2. self-supervision: generalization
 
-    增加了模型的泛化能力。
+    对于问题结构最小化先验知识,增加了模型的泛化能力。
 
 ## Applications of Transformers in vision
 
@@ -58,16 +58,16 @@ ViT：Vision Transformer，号称16x16个单词顶一张图（An Image is Worth 
 把image patch之后再每个patch做一次linear projection，这恰恰就是convolution。
 
 ### DeiT
-此外，我们介绍了特定于transformers的师生策略。它依靠蒸馏令token确保学生通过注意力向老师学习。我们展示了这种基于token的蒸馏的兴趣，尤其是在使用卷积网络作为教师时。这使我们能够报告与卷积网络相比在Imagenet（我们可以获得高达84.4％的准确性）和迁移到其他任务时具有竞争力的结果。
+此外，我们介绍了特定于transformers的师生策略。它依靠蒸馏token确保学生通过注意力向老师学习。我们展示了这种基于token的蒸馏的attention，尤其是在使用卷积网络作为教师时。这使我们能够报告与卷积网络相比在Imagenet（我们可以获得高达84.4％的准确性）和迁移到其他任务时具有竞争力的结果。
 
 ## Object Detection
 
 ### DETR
 事实上，文章所做的工作，就是将transformers运用到了object detection领域，取代了现在的模型需要手工设计的工作（例如 非极大值抑制 和 anchor generation），并且取得了不错的结果。在object detection上DETR准确率和运行时间上和Faster RCNN相当；将模型generalize到panoptic segmentation[3]任务上，DETR表现甚至还超过了其他的baseline.
 
-第一个是用transformer的encoder-decoder架构一次性生成  个box prediction。其中  是一个事先设定的、比远远大于image中object个数的一个整数；第二个是设计了bipartite matching loss，基于预测的boxes和ground truth boxes的二分图匹配计算loss的大小，从而使得预测的box的位置和类别更接近于ground truth.
+第一个是用transformer的encoder-decoder架构一次性生成所有box prediction。其中是一个事先设定的、比远远大于image中object个数的一个整数；第二个是设计了bipartite matching loss，基于预测的boxes和ground truth boxes的二分图匹配计算loss的大小，从而使得预测的box的位置和类别更接近于ground truth.
 
-Object queries有  个（其中  是一个事先设定的、比远远大于image中object个数的一个整数），输入Transformer Decoder后分别得到  个decoder output embedding，经过FFN（后面会讲）处理后就得到了  个预测的boxes和这些boxes的类别。具体实现上，object queries是  个learnable embedding，训练刚开始时可以随机初始化。在训练过程中，因为需要生成不同的boxes，object queries会被迫使变得不同来反映位置信息，所以也可以称为leant positional encoding （注意和encoder中讲的position encoding区分，不是一个东西）。
+Object queries有  个（其中  是一个事先设定的、比远远大于image中object个数的一个整数），输入Transformer Decoder后分别得到  个decoder output embedding，经过FFN（后面会讲）处理后就得到了  个预测的boxes和这些boxes的类别。具体实现上，object queries是  个learnable embedding，训练刚开始时可以随机初始化。在训练过程中，因为需要生成不同的boxes，object queries会被迫使变得不同来反映位置信息，所以也可以称为learnt positional encoding （注意和encoder中讲的position encoding区分，不是一个东西）。
 
 此外，和原始的Transformer[4]不同的是，DETR的Transformer Decoder是一次性处理全部的object queries，即一次性输出全部的predictions；而不像原始的Transformer是auto-regressive的，从左到右一个词一个词地输出。
 
